@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { getClassList } from '../../services/api-calls'
 
 class ClassList extends Component {
   constructor() {
@@ -6,6 +7,14 @@ class ClassList extends Component {
     this.state = {
       results: ['Paladin', 'Bard', 'Rogue']
     }
+  }
+  
+  async componentDidMount() {
+    // Make an API Call
+    const classData = await getClassList()
+    // Set state with results
+    console.log(classData)
+
   }
 
   render() {
