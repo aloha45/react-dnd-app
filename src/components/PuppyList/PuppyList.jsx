@@ -1,11 +1,14 @@
 import React from 'react';
+import Puppy from '../Puppy/Puppy'
 
 const PuppyList = (props) => {
   return (
     <>
       <h2>Puppy List</h2>
       {props.puppies.map((puppy, idx) =>
-        <h3>{puppy.name} the {puppy.breed}</h3>
+        <Puppy 
+          puppy={puppy}
+        />
       )}
     </>
   )
