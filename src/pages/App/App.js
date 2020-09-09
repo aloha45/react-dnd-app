@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from '../../components/NavBar/NavBar'
 import PuppyList from '../../components/PuppyList/PuppyList'
+import { Route } from 'react-router-dom'
 
 class App extends Component {
   state = {
@@ -9,7 +10,7 @@ class App extends Component {
       {url: "/classlist", name: "Class List"}, 
       {url: "/monsterlist", name: "Scary Monsters"}, 
       {url: "/spellSearch", name: "Search for Spells"},
-      {url: "https://www.tacobell.com", name: "Get you some tacos"}
+      {url: "/puppies", name: "Puppies"}
     ],
     puppies: [
       {name: "Belvedere", breed: "Poodle"},
@@ -24,9 +25,16 @@ class App extends Component {
         <NavBar 
           navItems={this.state.navItems}
         />
-        <PuppyList 
-          puppies={this.state.puppies}
+        <Route 
+          exact path='/puppies'
+          render={() => 
+            <PuppyList 
+              puppies={this.state.puppies}
+            />
+          }
         />
+
+
       </>
     )
   }
