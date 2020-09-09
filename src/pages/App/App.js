@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from '../../components/NavBar/NavBar'
 import PuppyList from '../../components/PuppyList/PuppyList'
 import { Route } from 'react-router-dom'
+import ClassList from '../ClassList/ClassList'
 
 class App extends Component {
   state = {
@@ -26,14 +27,19 @@ class App extends Component {
           navItems={this.state.navItems}
         />
         <Route 
-          exact path='/puppies'
+          exact path='/puppies/'
           render={() => 
             <PuppyList 
               puppies={this.state.puppies}
             />
           }
         />
-
+        <Route 
+          exact path='/classlist'
+          render={() => 
+            <ClassList />
+          }
+        />
 
       </>
     )
