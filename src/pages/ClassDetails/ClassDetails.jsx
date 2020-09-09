@@ -30,7 +30,7 @@ class ClassDetails extends Component {
         {classDetails.name ?
         <>
           {/* Gotta have the random cat pics... */}
-          <img src="http://theoldreader.com/kittens/320/240/" alt=""/>
+          <img src="http://theoldreader.com/kittens/320/240/" alt="catpicclass"/>
           <h2>{classDetails.name}</h2>
           <div>Hit die: d{classDetails.hit_die}</div>
           <h3>Proficiencies:</h3>
