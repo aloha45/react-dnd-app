@@ -5,7 +5,7 @@ class ClassList extends Component {
   constructor() {
     super()
     this.state = {
-      results: ['Paladin', 'Bard', 'Rogue']
+      results: []
     }
   }
   
@@ -14,7 +14,7 @@ class ClassList extends Component {
     const classData = await getClassList()
     // Set state with results
     console.log(classData)
-
+    this.setState({ results: classData.results })
   }
 
   render() {
@@ -22,11 +22,13 @@ class ClassList extends Component {
       <div>
         <h3>Class List</h3>
         <div className="icon-container">
-          {/* This is where we map over our results, representing each with a div containing an image and a name */}
           {this.state.results.map((classTitle) => (
-            <div id="classDiv" key={classTitle}>
-              <img style={{ width: "100px", height: "100px" }} src={`/images/${classTitle}.svg`} alt="class-logo"/>
-              {classTitle}
+            // Make sure to update the key to use .index
+            <div id="classDiv" key={classTitle.index}>
+              {/* Update the src to use the .name property for our photos */}
+              <img style={{ width: "100px", height: "100px" }} src={`/images/${classTitle.name}.svg`} alt="class-logo"/>
+              {/* Update the text rendered, based on the name of the class */}
+              {classTitle.name}
             </div>
           ))}
         </div>
