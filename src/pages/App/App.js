@@ -4,6 +4,7 @@ import NavBar from '../../components/NavBar/NavBar'
 import PuppyList from '../../components/PuppyList/PuppyList'
 import { Route } from 'react-router-dom'
 import ClassList from '../ClassList/ClassList'
+import ClassDetails from '../ClassDetails/ClassDetails'
 
 class App extends Component {
   state = {
@@ -40,7 +41,14 @@ class App extends Component {
             <ClassList />
           }
         />
-
+        <Route 
+          exact path='/class'
+          render={( {location} ) => 
+            <ClassDetails 
+              location={location}
+            />
+          }
+        />
       </>
     )
   }
