@@ -5,6 +5,7 @@ import PuppyList from '../../components/PuppyList/PuppyList'
 import { Route } from 'react-router-dom'
 import ClassList from '../ClassList/ClassList'
 import ClassDetails from '../ClassDetails/ClassDetails'
+import MonsterList from '../MonsterList/MonsterList'
 
 class App extends Component {
   state = {
@@ -46,6 +47,13 @@ class App extends Component {
           render={( {location} ) => 
             <ClassDetails 
               location={location}
+            />
+          }
+        />
+        <Route 
+          exact path='/monsterlist'
+          render={() => 
+            <MonsterList 
             />
           }
         />
