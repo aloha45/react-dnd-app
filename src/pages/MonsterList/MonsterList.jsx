@@ -24,7 +24,7 @@ class MonsterList extends Component {
             <Link
               to={{
                 pathname: '/monster',
-                state: { monster }
+                monsterState: { monster }
               }}
             >
               {monster.name}

@@ -6,6 +6,9 @@ import { Route } from 'react-router-dom'
 import ClassList from '../ClassList/ClassList'
 import ClassDetails from '../ClassDetails/ClassDetails'
 import MonsterList from '../MonsterList/MonsterList'
+import MonsterDetails from '../MonsterDetails/MonsterDetails'
+import SpellSearch from '../SpellSearch/SpellSearch'
+import SpellDetails from '../SpellDetails/SpellDetails'
 
 class App extends Component {
   state = {
@@ -57,6 +60,25 @@ class App extends Component {
             />
           }
         />
+        <Route 
+          exact path='/monster' 
+          render={({ location }) => 
+            <MonsterDetails 
+              location={location}
+            />
+          }/>
+          <Route 
+          exact path='/spellSearch' 
+          render={() => 
+            <SpellSearch 
+            />
+          }/>
+          <Route 
+          exact path='/spell/:name'
+          render={({ match }) =>
+            <SpellDetails 
+            match={match}/>
+          }/>
       </>
     )
   }
